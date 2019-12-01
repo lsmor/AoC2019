@@ -1,6 +1,15 @@
+{-# LANGUAGE OverloadedStrings #-}
+
 module Main where
 
-import Lib
+import DayOne
+
+inputFile :: FilePath
+inputFile = "./inputs/dayOne.txt"
+
 
 main :: IO ()
-main = someFunc
+main = do 
+  content <- readFile inputFile
+  let readContent = allRequeriments $ read <$> lines content
+  print readContent

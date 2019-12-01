@@ -2,3 +2,4 @@
 AoC2019.cabal
 *~
 stack.yaml.lock
+inputs/
