@@ -1,15 +1,13 @@
-{-# LANGUAGE OverloadedStrings #-}
-
 module Main where
 
-import DayOne
+import DayTwo
+import           Data.ByteString.Lazy           ( ByteString )
+import qualified Data.ByteString.Lazy.Char8    as B
+import qualified Data.Vector                   as M
+import           Data.Vector                    ( Vector )
+import System.Environment
 
-inputFile :: FilePath
-inputFile = "./inputs/dayOne.txt"
-
-
-main :: IO ()
-main = do 
-  content <- readFile inputFile
-  let readContent = allRequeriments $ read <$> lines content
-  print readContent
+main = do
+  [f] <- getArgs 
+  s  <- B.readFile f
+  print $ solve s
