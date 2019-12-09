@@ -1,3 +1,5 @@
+{-# LANGUAGE OverloadedStrings #-}
+
 module Main where
 
 import DayTwo
@@ -8,6 +10,11 @@ import           Data.Vector                    ( Vector )
 import System.Environment
 
 main = do
-  [f] <- getArgs 
+  [f, n, v] <- getArgs 
   s  <- B.readFile f
-  print $ solve s
+  let noun = read n
+      verb = read v
+  print $ solve s noun verb
+
+  -- noun ~ + 388800
+  -- verb ~ + 1
